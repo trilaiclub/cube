@@ -3,23 +3,37 @@
   "services": {
     "query": {
       "idQueue": [
-        1,
-        2,
         3,
         4
       ],
       "list": {
         "0": {
-          "query": "userid:16BD3D76",
+          "query": "*:*",
           "alias": "",
           "color": "#7EB26D",
           "id": 0,
           "pin": false,
           "type": "lucene"
+        },
+        "1": {
+          "id": 1,
+          "color": "#BF1B00",
+          "query": "age: [ 21 TO 35 ]",
+          "alias": "",
+          "pin": false
+        },
+        "2": {
+          "id": 2,
+          "color": "#FCEACA",
+          "query": "category:laptops",
+          "alias": "",
+          "pin": false
         }
       },
       "ids": [
-        0
+        0,
+        1,
+        2
       ]
     },
     "filter": {
@@ -62,16 +76,16 @@
           "type": "query",
           "label": "Search",
           "history": [
+            "category:laptops",
+            "age: [ 21 TO 35 ]",
+            "*:*",
+            "category:laptop",
+            "category: laptop",
             "userid:16BD3D76",
             "userid:2B146FCD",
             "userid:37F00BA3",
             "userid:311DBC84",
-            "userid:C348799",
-            "userid:11F7D29D",
-            "userid:2B1F305E",
-            "userid:313985fa",
-            "userid:313985FA",
-            "*:*"
+            "userid:C348799"
           ],
           "remember": 10,
           "pinned": true,
@@ -88,9 +102,11 @@
           "queries": {
             "mode": "all",
             "ids": [
-              0
+              0,
+              1,
+              2
             ],
-            "query": "q=userid%3A16BD3D76&fq=age:[18 TO 60]&stats=true&stats.field=id&wt=json&rows=0\n",
+            "query": "q=*%3A*&fq=age:[18 TO 60]&stats=true&stats.field=id&wt=json&rows=0\nq=age%3A%20%5B%2021%20TO%2035%20%5D&fq=age:[18 TO 60]&stats=true&stats.field=id&wt=json&rows=0\nq=category%3Alaptops&fq=age:[18 TO 60]&stats=true&stats.field=id&wt=json&rows=0\n",
             "basic_query": "",
             "custom": ""
           },
@@ -112,7 +128,7 @@
               "field": "id",
               "decimalDigits": 0,
               "label": "",
-              "value": "10"
+              "value": "1853"
             }
           ],
           "refresh": {
@@ -139,9 +155,11 @@
           "queries": {
             "mode": "all",
             "ids": [
-              0
+              0,
+              1,
+              2
             ],
-            "query": "q=userid%3A16BD3D76&wt=json&rows=0&fq=age:[18 TO 60]&facet=true&facet.range=age&facet.range.start=18&facet.range.end=61&facet.range.gap=3\n",
+            "query": "q=*%3A*&wt=json&rows=0&fq=age:[18 TO 60]&facet=true&facet.range=age&facet.range.start=18&facet.range.end=61&facet.range.gap=3\nq=age%3A%20%5B%2021%20TO%2035%20%5D&wt=json&rows=0&fq=age:[18 TO 60]&facet=true&facet.range=age&facet.range.start=18&facet.range.end=61&facet.range.gap=3\nq=category%3Alaptops&wt=json&rows=0&fq=age:[18 TO 60]&facet=true&facet.range=age&facet.range.start=18&facet.range.end=61&facet.range.gap=3\n",
             "custom": ""
           },
           "max_rows": 100000,
@@ -165,7 +183,7 @@
           "bars": true,
           "stack": true,
           "points": false,
-          "lines": false,
+          "lines": true,
           "lines_smooth": false,
           "legend": true,
           "x-axis": true,
@@ -200,10 +218,12 @@
           "queries": {
             "mode": "all",
             "ids": [
-              0
+              0,
+              1,
+              2
             ],
-            "query": "q=userid%3A16BD3D76&fq=age:[18 TO 60]&facet=true&facet.field=category&facet.field=tokens&wt=json",
-            "basic_query": "q=userid%3A16BD3D76&fq=age:[18 TO 60]&facet=true&facet.field=category&facet.field=tokens",
+            "query": "q=*%3A* OR age%3A%20%5B%2021%20TO%2035%20%5D OR category%3Alaptops&fq=age:[18 TO 60]&facet=true&facet.field=category&facet.field=tokens&wt=json",
+            "basic_query": "q=*%3A* OR age%3A%20%5B%2021%20TO%2035%20%5D OR category%3Alaptops&fq=age:[18 TO 60]&facet=true&facet.field=category&facet.field=tokens",
             "custom": ""
           },
           "group": "default",
@@ -219,8 +239,8 @@
           "facet_limit": 10,
           "maxnum_facets": 5,
           "foundResults": true,
-          "header_title": "by user(s) browse activity",
-          "toggle_element": "tokens",
+          "header_title": "by user(s) activity",
+          "toggle_element": "category",
           "show_queries": true,
           "title": "User(s) Interest Rank",
           "exportSize": null,
@@ -267,10 +287,12 @@
           "queries": {
             "mode": "all",
             "ids": [
-              0
+              0,
+              1,
+              2
             ],
-            "query": "q=userid%3A16BD3D76&fq=age:[18 TO 60]&wt=json&rows=5000",
-            "basic_query": "q=userid%3A16BD3D76&fq=age:[18 TO 60]"
+            "query": "q=*%3A* OR age%3A%20%5B%2021%20TO%2035%20%5D OR category%3Alaptops&fq=age:[18 TO 60]&wt=json&rows=5000",
+            "basic_query": "q=*%3A* OR age%3A%20%5B%2021%20TO%2035%20%5D OR category%3Alaptops&fq=age:[18 TO 60]"
           },
           "field_list": false,
           "status": "Stable",
@@ -337,7 +359,6 @@
     "core_name": "activities",
     "core_list": [
       "activities",
-      "banana-int",
       "dwords",
       "test"
     ],
